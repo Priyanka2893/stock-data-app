@@ -1,0 +1,38 @@
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--    <title>Stock Quote Viewer</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h2>Get Stock Quote</h2>-->
+<!--<form id="stockForm">-->
+<!--    <label for="symbol">Enter Stock Symbol:</label>-->
+<!--    <input type="text" id="symbol" name="symbol" required>-->
+<!--    <button type="submit">Get Quote</button>-->
+<!--</form>-->
+
+<!--<h3>Result:</h3>-->
+<!--<pre id="result"></pre>-->
+
+<!--<script>-->
+<!--    const form = document.getElementById("stockForm");-->
+<!--    const result = document.getElementById("result");-->
+
+<!--    form.addEventListener("submit", function(event) {-->
+<!--        event.preventDefault();-->
+<!--        const symbol = document.getElementById("symbol").value;-->
+<!--        fetch(`/api/stock/${symbol}`)-->
+<!--            .then(response => {-->
+<!--                if (!response.ok) throw new Error("Stock not found");-->
+<!--                return response.json();-->
+<!--            })-->
+<!--            .then(data => {-->
+<!--                result.textContent = JSON.stringify(data, null, 2);-->
+<!--            })-->
+<!--            .catch(error => {-->
+<!--                result.textContent = `Error: ${error.message}`;-->
+<!--            });-->
+<!--    });-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
