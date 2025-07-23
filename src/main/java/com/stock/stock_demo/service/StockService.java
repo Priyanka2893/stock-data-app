@@ -6,8 +6,11 @@ import com.stock.stock_demo.entity.dto.StockDto;
 import java.util.List;
 
 public interface StockService {
-    Stock saveStock(StockDto dto);
+    Stock saveStock(String symbol);
     List<Stock> getAllStocks();
 
+    Stock getStockBySymbol(String symbol);
+
+    Stock getStockByFMPSymbol(String symbol);
 }
 

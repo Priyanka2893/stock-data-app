@@ -1,5 +1,6 @@
 package com.stock.stock_demo.service;
 
+import com.stock.stock_demo.entity.Stock;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
