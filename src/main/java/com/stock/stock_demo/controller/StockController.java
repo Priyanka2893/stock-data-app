@@ -21,20 +21,26 @@ public class StockController {
     private StockTestService service1;
     private StockServiceImpl service;
 
-    public StockController(StockTestService service){
-        this.service1 = service;
+    public StockController(StockTestService service1,StockServiceImpl service){
+        this.service1 = service1;
+        this.service = service;
     }
-    @GetMapping("/{symbol}")
-    public String getStockQuote(@PathVariable String symbol){
-        return service1.getStockQuote(symbol);
+    @GetMapping("/fmp/{symbol}")
+    public Stock getStockQuote(@PathVariable String symbol){
+        return service.getStockByFMPSymbol(symbol);
     }
-    @PostMapping()
-    public Stock saveStock(@RequestBody StockDto stockDto){
-        return service.saveStock(stockDto);
+    @PostMapping("/{symbol}")
+    public Stock saveStock(@PathVariable String symbol){
+        return service.saveStock(symbol);
     }
     @GetMapping
     public List<Stock> getListOfStock(){
         return service.getAllStocks();
+    }
+
+    @GetMapping("/{symbol}")
+    public Stock getStockBySymbol(@PathVariable String symbol){
+        return service.getStockBySymbol(symbol);
     }
 
 }
